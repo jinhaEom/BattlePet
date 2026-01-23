@@ -1,3 +1,4 @@
+import "./global.css"
 import 'react-native-gesture-handler';
 import React, { useEffect, useState } from 'react';
 import TestFile from './src/testfile';
@@ -6,7 +7,7 @@ import { Navigation } from '@/ui/navigation';
 function App() {
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1, backgroundColor: '#ffffff' }}>
+      <SafeAreaView className="flex-1 bg-white">
         <Navigation />
       </SafeAreaView>
     </SafeAreaProvider>

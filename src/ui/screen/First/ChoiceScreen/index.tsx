@@ -15,8 +15,8 @@ const ChoiceScreen = () => {
         navigation.navigate('WriteScreen');
     }
     return (
-  <View style={{flex: 1, backgroundColor:'#ffffff'}}>
-        <Text onPress={writeRoomNum}>방만들기</Text>
+  <View className="flex-1 bg-white">
+        <Text className="text-black" onPress={writeRoomNum}>방만들기</Text>
         <Text>방선택하기</Text>
     </View>
 
