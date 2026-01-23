@@ -1,10 +1,9 @@
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { RootStackParamList } from "./type"
+import { RootStackParamList } from "./types"
 import ChoiceScreen from '@/ui/screen/First/ChoiceScreen'
 import WriteScreen from '@/ui/screen/First/WriteScreen'
-import { useNavigation, useRoute, RouteProp } from "@react-navigation/native";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import MainScreen from '@/ui/screen/Home/MainScreen'
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -20,15 +19,10 @@ export const Navigation = () => {
             >
                 <Stack.Screen name="ChoiceScreen" component={ChoiceScreen}/>
                 <Stack.Screen name="WriteScreen" component={WriteScreen}/>
-
+                <Stack.Screen name="MainScreen" component={MainScreen}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
 }
 
-export const useRootNavigation = <
-  RouteName extends keyof RootStackParamList,
->() => useNavigation<NativeStackNavigationProp<RootStackParamList, RouteName>>();
-
-export const useRootRoute = <RouteName extends keyof RootStackParamList>() =>
-  useRoute<RouteProp<RootStackParamList, RouteName>>();
+export * from './types';
